@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet id="1" author="Konrad">
+        <createTable tableName="task">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="input" type="VARCHAR(255)">
+            </column>
+            <column name="pattern" type="VARCHAR(255)">
+            </column>
+        </createTable>
+
+        <createTable tableName="result">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="task_id" type="bigint"/>
+            <column name="position" type="int"/>
+            <column name="typos" type="int"/>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
